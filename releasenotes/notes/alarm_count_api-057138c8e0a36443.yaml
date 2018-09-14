@@ -1,0 +1,4 @@
+---
+features:
+  - Created a new API to query alarm counts, with an optional parameter to
+    query for all_tenants. The path for the api is ``/v1/alarm/count/``.

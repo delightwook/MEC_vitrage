@@ -1,0 +1,49 @@
+# turn on all the vitrage services by default
+# API service
+enable_service vitrage-api
+# Graph
+enable_service vitrage-graph
+# Notifier
+enable_service vitrage-notifier
+# Collector
+enable_service vitrage-collector
+# machine_learning
+enable_service vitrage-ml
+# Persistor
+enable_service vitrage-persistor
+# snmp_parsing
+enable_service vitrage-snmp-parsing
+
+# Default directories
+VITRAGE_DIR=$DEST/vitrage
+VITRAGE_CONF_DIR=/etc/vitrage
+VITRAGE_CONF=$VITRAGE_CONF_DIR/vitrage.conf
+VITRAGE_AUTH_CACHE_DIR=${VITRAGE_AUTH_CACHE_DIR:-/var/cache/vitrage}
+VITRAGE_WSGI_DIR=${VITRAGE_WSGI_DIR:-/var/www/vitrage}
+
+# Set up database backend
+VITRAGE_DATABASE=${VITRAGE_DATABASE:-mysql}
+
+# Vitrage connection info.
+VITRAGE_SERVICE_PROTOCOL=http
+VITRAGE_SERVICE_HOST=$SERVICE_HOST
+VITRAGE_SERVICE_PORT=${VITRAGE_SERVICE_PORT:-8999}
+
+# VITRAGE_DEPLOY defines how Vitrage is deployed, allowed values:
+# - mod_wsgi : Run Vitrage under Apache HTTPd mod_wsgi
+# - simple : Run vitrage-api
+# - uwsgi : Run Vitrage under uwsgi
+# - <empty>: Fallback to VITRAGE_USE_MOD_WSGI or ENABLE_HTTPD_MOD_WSGI_SERVICES
+VITRAGE_DEPLOY=${VITRAGE_DEPLOY}
+
+# Toggle for deploying Vitrage with/without nagios
+VITRAGE_USE_NAGIOS=$(trueorfalse False VITRAGE_USE_NAGIOS)
+
+VITRAGE_DEFAULT_DATASOURCES=${VITRAGE_DEFAULT_DATASOURCES:-nova.host,nova.instance,nova.zone,nagios,static,static_physical,aodh,cinder.volume,neutron.network,neutron.port,heat.stack,doctor}
+
+# for now dont use pip install for the client
+LIBS_FROM_GIT=python-vitrageclient
+
+# admin details
+admin_project_name=${ADMIN_TENANT_NAME:-admin}
+admin_domain_name=${ADMIN_DOMAIN_NAME:-Default}

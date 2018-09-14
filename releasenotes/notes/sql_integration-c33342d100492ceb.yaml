@@ -1,0 +1,5 @@
+---
+features:
+  - Integration with Sql Alchemy.
+    Allows for data and state to be kept after restarts.
+    And will also allow a shared data store for multiple processes.

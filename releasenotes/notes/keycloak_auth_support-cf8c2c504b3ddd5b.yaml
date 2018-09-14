@@ -1,0 +1,4 @@
+---
+features:
+  - Vitrage now supports authentication with KeyCloak server using OpenId
+    Connect protocol.

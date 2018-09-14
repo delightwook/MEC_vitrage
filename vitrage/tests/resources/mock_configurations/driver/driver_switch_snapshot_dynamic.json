@@ -1,0 +1,16 @@
+{
+  "relationships": [
+      {"type": "nova.host",
+      "name": "host-[1-9]",
+      "id": "[1-9]{5}",
+      "relation_type": "contains"
+      }
+    ],
+  "name": "switch-[0-9]",
+  "id": "[1-9]{5}",
+  "vitrage_sample_date": "2015-12-01T12:46:41Z",
+  "type": "switch",
+  "vitrage_datasource_action": "snapshot",
+  "state": "available",
+  "vitrage_event_type": "entity_update"
+}
