@@ -1,0 +1,10 @@
+metadata:
+ name: single_entity
+ description: definition template with a single entity
+definitions:
+ entities:
+  - entity:
+     category: RESOURCE
+     type: nova.host
+     template_id: resource
+

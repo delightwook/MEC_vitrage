@@ -1,0 +1,3 @@
+---
+features:
+  - Support get_changes in the static datasource

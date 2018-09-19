@@ -1,0 +1,4 @@
+---
+features:
+  - Added a mandatory ``type`` property to the templates metadata section in
+    version 2. The type Should be one of {standard, definition, equivalence}

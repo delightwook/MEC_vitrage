@@ -1,0 +1,4 @@
+---
+features:
+  - Register default policies in code. Support the community goal for the
+    Queens release.

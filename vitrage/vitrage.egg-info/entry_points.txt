@@ -1,0 +1,26 @@
+[console_scripts]
+vitrage-api = vitrage.cli.api:main
+vitrage-collector = vitrage.cli.collector:main
+vitrage-dbsync = vitrage.cli.storage:dbsync
+vitrage-graph = vitrage.cli.graph:main
+vitrage-ml = vitrage.cli.machine_learning:main
+vitrage-notifier = vitrage.cli.notifier:main
+vitrage-persistor = vitrage.cli.persistor:main
+vitrage-snmp-parsing = vitrage.cli.snmp_parsing:main
+
+[oslo.config.opts]
+datasources = vitrage.opts:datasources_opts
+vitrage = vitrage.opts:list_opts
+
+[oslo.policy.policies]
+vitrage = vitrage.common.policies:list_rules
+
+[vitrage.entity_graph]
+networkx = vitrage.graph.driver.networkx_graph:NXGraph
+
+[vitrage.storage]
+mysql = vitrage.storage.impl_sqlalchemy:Connection
+mysql+pymysql = vitrage.storage.impl_sqlalchemy:Connection
+postgresql = vitrage.storage.impl_sqlalchemy:Connection
+sqlite = vitrage.storage.impl_sqlalchemy:Connection
+
